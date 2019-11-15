@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol Rating : class{
+protocol RatingProtocol : class{
     func updateCell()
 }

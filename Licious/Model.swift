@@ -10,21 +10,21 @@ import Foundation
 
 
 class ReviewRating: Codable {
-    let data: ReviewRatingData
+    var data: ReviewRatingData
 }
 
 class ReviewRatingData: Codable {
-    let shipment_id: String
-    let noOfReviews: Int
-    let order_date: String
-    let basic_info : BasicInfo
-    let feedbackItems : [FeedbackItems]
+    var shipment_id: String
+    var noOfReviews: Int
+    var order_date: String
+    var basic_info : BasicInfo
+    var feedbackItems : [FeedbackItems]
 }
 
 class BasicInfo: Codable{
-    let delivered_date : String
-    let items_message : String
-    let item_images: [String]
+    var delivered_date : String
+    var items_message : String
+    var item_images: [String]
     
     var itemImageUrl: URL? {
         guard let urlString = item_images.first else {return nil}
@@ -33,24 +33,32 @@ class BasicInfo: Codable{
 }
 
 class FeedbackItems: Codable{
-    let classQuestion : String
-    let feedbackType : Feedback
-    let rateLevel : [RateLevel]?
+    var classQuestion : String
+    var feedbackType : Feedback
+    var rateLevel : [RateLevel]?
     var updatedRating : Int?
     var question : RateLevel? {
         guard let rateLevel = rateLevel,
             let updatedRating = updatedRating else {return nil}
         return rateLevel[updatedRating-1]
     }
+    var product_data : [ProductData]?
+    
     enum Feedback : String, Codable{
         case question_with_text
         case dynamic
     }
 }
 
+class ProductData: Codable {
+    var pr_name: String
+    var textQuestion : String
+    var rateLevel : [RateLevel]?
+}
+
 class RateLevel : Codable{
-    let level : Int
-    let levelRateQuestion : [LevelRateQuestion]
+    var level : Int
+    var levelRateQuestion : [LevelRateQuestion]
 }
 
 class LevelRateQuestion : Codable {
@@ -62,3 +70,4 @@ class Attributes: Codable {
     let option : String
     let subClass : String
 }
+

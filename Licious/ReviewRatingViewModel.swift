@@ -15,7 +15,7 @@ class ReviewRatingViewModel: NSObject {
     var response: ReviewRating?
     
     
-    func fetchData(onCompletion: @escaping ()->Void) {
+    func fetchData(onCompletion: ()->Void) {
         self.service.fetchData { (response, success) in
             if let response = response, success {
                 self.response = response

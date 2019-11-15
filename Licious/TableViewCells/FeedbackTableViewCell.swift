@@ -10,6 +10,7 @@ import UIKit
 import Cosmos
 class FeedbackTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var productsCollectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
     
@@ -44,11 +45,12 @@ class FeedbackTableViewCell: UITableViewCell {
         }
         }
     }
-    weak var delegate : Rating?
+    weak var delegate : RatingProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        productsCollectionView.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Review Rating Table View Controller-->
+        <!--Reviews & Ratings-->
         <scene sceneID="0HH-6K-QcO">
             <objects>
                 <tableViewController id="YYg-nw-ovG" customClass="ReviewRatingTableViewController" customModule="Licious" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,8 +30,9 @@
                             <outlet property="delegate" destination="YYg-nw-ovG" id="iwa-QK-SDb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="LYh-ep-Ugf"/>
+                    <navigationItem key="navigationItem" title="Reviews &amp; Ratings" id="LYh-ep-Ugf"/>
                     <connections>
+                        <outlet property="submitButton" destination="mlL-aZ-HKG" id="8Pi-8J-0Ko"/>
                         <outlet property="submitButtonView" destination="HdO-o2-tDC" id="NYu-O9-eNs"/>
                         <outlet property="viewModel" destination="0vC-2f-Z0N" id="eWA-J3-2VF"/>
                     </connections>
@@ -43,7 +44,9 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlL-aZ-HKG">
                             <rect key="frame" x="8" y="8" width="355" height="82"/>
-                            <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <state key="normal" title="Submit"/>
                         </button>
                     </subviews>

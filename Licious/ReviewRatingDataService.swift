@@ -20,7 +20,7 @@ class ReviewRatingDataService: NSObject {
         return try? Data(contentsOf: path)
     }()
     
-    func fetchData(onCompletion: @escaping (ReviewRating? ,Bool)->Void) {
+    func fetchData(onCompletion: (ReviewRating? ,Bool)->Void) {
         guard let data = self.data else {
             onCompletion(nil, false)
             return
