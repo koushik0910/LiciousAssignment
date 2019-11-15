@@ -1,24 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x1l-sf-KqQ">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Review Rating Table View Controller-->
+        <scene sceneID="0HH-6K-QcO">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="YYg-nw-ovG" customClass="ReviewRatingTableViewController" customModule="Licious" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="YIw-Oq-sS2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="4af-Xn-g1Q">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4af-Xn-g1Q" id="6gd-Ic-Hj8">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="YYg-nw-ovG" id="DSr-Ca-EQN"/>
+                            <outlet property="delegate" destination="YYg-nw-ovG" id="iwa-QK-SDb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="LYh-ep-Ugf"/>
+                    <connections>
+                        <outlet property="submitButtonView" destination="HdO-o2-tDC" id="NYu-O9-eNs"/>
+                        <outlet property="viewModel" destination="0vC-2f-Z0N" id="eWA-J3-2VF"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tsn-LE-DEZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="HdO-o2-tDC">
+                    <rect key="frame" x="0.0" y="0.0" width="371" height="98"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlL-aZ-HKG">
+                            <rect key="frame" x="8" y="8" width="355" height="82"/>
+                            <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Submit"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="keY-lD-LUy" firstAttribute="bottom" secondItem="mlL-aZ-HKG" secondAttribute="bottom" constant="8" id="QlY-Ec-qy8"/>
+                        <constraint firstItem="keY-lD-LUy" firstAttribute="trailing" secondItem="mlL-aZ-HKG" secondAttribute="trailing" constant="8" id="asL-bA-5ve"/>
+                        <constraint firstItem="mlL-aZ-HKG" firstAttribute="leading" secondItem="keY-lD-LUy" secondAttribute="leading" constant="8" id="ce2-To-GvY"/>
+                        <constraint firstItem="mlL-aZ-HKG" firstAttribute="top" secondItem="keY-lD-LUy" secondAttribute="top" constant="8" id="xoC-ff-kB3"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="keY-lD-LUy"/>
+                </view>
+                <customObject id="0vC-2f-Z0N" customClass="ReviewRatingViewModel" customModule="Licious" customModuleProvider="target">
+                    <connections>
+                        <outlet property="service" destination="rQE-HI-rEO" id="3SU-lo-Mza"/>
+                    </connections>
+                </customObject>
+                <customObject id="rQE-HI-rEO" customClass="ReviewRatingDataService" customModule="Licious" customModuleProvider="target"/>
             </objects>
+            <point key="canvasLocation" x="3316" y="-350.37481259370315"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9Rp-nl-UaD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x1l-sf-KqQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Do3-gr-W0Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YYg-nw-ovG" kind="relationship" relationship="rootViewController" id="jFW-uV-uiZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DJr-XY-Pbf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="NaS-UY-O0s"/>
+            </objects>
+            <point key="canvasLocation" x="2376.8000000000002" y="-350.37481259370315"/>
         </scene>
     </scenes>
 </document>
