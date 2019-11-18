@@ -89,8 +89,8 @@ class ReviewRatingTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        guard let section = Section(rawValue: section) else {return CGFloat.leastNormalMagnitude}
-        return 20
+        guard Section(rawValue: section) != nil else {return CGFloat.leastNormalMagnitude}
+        return 10
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -103,6 +103,5 @@ extension ReviewRatingTableViewController : RatingProtocol{
     func updateCell() {
         submitButton.isEnabled = true
         tableView.reloadData()
-    }
-    
+    }    
 }

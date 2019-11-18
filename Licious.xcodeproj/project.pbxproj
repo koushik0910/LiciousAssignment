@@ -27,6 +27,8 @@
 		70BE101C237DCC470098AAB1 /* FeedbackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70BE101A237DCC470098AAB1 /* FeedbackTableViewCell.xib */; };
 		70BE101E237DD3960098AAB1 /* RatingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BE101D237DD3960098AAB1 /* RatingProtocol.swift */; };
 		70BE1020237DE09D0098AAB1 /* SelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BE101F237DE09D0098AAB1 /* SelectionButton.swift */; };
+		70FAC6A22382DF14005879F5 /* AnythingElseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FAC6A02382DF14005879F5 /* AnythingElseTableViewCell.swift */; };
+		70FAC6A32382DF14005879F5 /* AnythingElseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FAC6A12382DF14005879F5 /* AnythingElseTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		70BE101A237DCC470098AAB1 /* FeedbackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedbackTableViewCell.xib; sourceTree = "<group>"; };
 		70BE101D237DD3960098AAB1 /* RatingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingProtocol.swift; sourceTree = "<group>"; };
 		70BE101F237DE09D0098AAB1 /* SelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionButton.swift; sourceTree = "<group>"; };
+		70FAC6A02382DF14005879F5 /* AnythingElseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnythingElseTableViewCell.swift; sourceTree = "<group>"; };
+		70FAC6A12382DF14005879F5 /* AnythingElseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnythingElseTableViewCell.xib; sourceTree = "<group>"; };
 		DF2B4B4A16B8DFB2BC9B3F0E /* Pods-Licious.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Licious.release.xcconfig"; path = "Target Support Files/Pods-Licious/Pods-Licious.release.xcconfig"; sourceTree = "<group>"; };
 		E021DADCB1851539948376BA /* Pods_Licious.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Licious.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -125,6 +129,8 @@
 				70A0B253237DB71B0009EE86 /* ItemDetailsTableViewCell.xib */,
 				70BE1019237DCC470098AAB1 /* FeedbackTableViewCell.swift */,
 				70BE101A237DCC470098AAB1 /* FeedbackTableViewCell.xib */,
+				70FAC6A02382DF14005879F5 /* AnythingElseTableViewCell.swift */,
+				70FAC6A12382DF14005879F5 /* AnythingElseTableViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -210,6 +216,7 @@
 				70A0B23E237DA5610009EE86 /* LaunchScreen.storyboard in Resources */,
 				70A0B255237DB71C0009EE86 /* ItemDetailsTableViewCell.xib in Resources */,
 				7033774C2380F0670080E777 /* ProductCollectionViewCell.xib in Resources */,
+				70FAC6A32382DF14005879F5 /* AnythingElseTableViewCell.xib in Resources */,
 				70A0B23B237DA5610009EE86 /* Assets.xcassets in Resources */,
 				70A0B239237DA55F0009EE86 /* Main.storyboard in Resources */,
 				70A0B248237DA9610009EE86 /* FeedbackPayload.json in Resources */,
@@ -270,6 +277,7 @@
 				7033774B2380F0670080E777 /* ProductCollectionViewCell.swift in Sources */,
 				70A0B232237DA55F0009EE86 /* AppDelegate.swift in Sources */,
 				70A0B234237DA55F0009EE86 /* SceneDelegate.swift in Sources */,
+				70FAC6A22382DF14005879F5 /* AnythingElseTableViewCell.swift in Sources */,
 				70BE101E237DD3960098AAB1 /* RatingProtocol.swift in Sources */,
 				70A0B250237DAFCF0009EE86 /* ReviewRatingDataService.swift in Sources */,
 				70BE1020237DE09D0098AAB1 /* SelectionButton.swift in Sources */,

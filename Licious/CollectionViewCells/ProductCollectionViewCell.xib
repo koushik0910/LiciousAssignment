@@ -20,12 +20,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="201" height="40"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHf-2w-c0i">
-                                <rect key="frame" x="79.5" y="9" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="82" y="12" width="37.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ekx-GI-3fp">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ekx-GI-3fp">
                                 <rect key="frame" x="0.0" y="38" width="201" height="2"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -52,6 +52,10 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="201" height="40"/>
+            <connections>
+                <outlet property="blackLineView" destination="Ekx-GI-3fp" id="I7c-bv-8eG"/>
+                <outlet property="productTitleLabel" destination="zHf-2w-c0i" id="Pm4-hf-ldJ"/>
+            </connections>
             <point key="canvasLocation" x="23.913043478260871" y="-36.160714285714285"/>
         </collectionViewCell>
     </objects>

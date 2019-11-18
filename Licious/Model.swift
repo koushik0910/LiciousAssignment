@@ -42,6 +42,7 @@ class FeedbackItems: Codable{
             let updatedRating = updatedRating else {return nil}
         return rateLevel[updatedRating-1]
     }
+    var selectedIndex : Int?
     var product_data : [ProductData]?
     
     enum Feedback : String, Codable{
@@ -53,7 +54,13 @@ class FeedbackItems: Codable{
 class ProductData: Codable {
     var pr_name: String
     var textQuestion : String
+    var updatedRating : Int?
     var rateLevel : [RateLevel]?
+    var question : RateLevel? {
+        guard let rateLevel = rateLevel,
+            let updatedRating = updatedRating else {return nil}
+        return rateLevel[updatedRating-1]
+    }
 }
 
 class RateLevel : Codable{

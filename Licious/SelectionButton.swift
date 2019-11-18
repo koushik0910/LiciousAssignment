@@ -33,6 +33,7 @@ class SelectionButton: UIButton {
         super.init(frame: .zero)
         setTitleColor(.red, for: .normal)
         setTitle(title, for: .normal)
+        titleLabel?.font =  .systemFont(ofSize: 13)
         titleLabel?.adjustsFontSizeToFitWidth = true
         addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         layer.borderWidth = 1.0

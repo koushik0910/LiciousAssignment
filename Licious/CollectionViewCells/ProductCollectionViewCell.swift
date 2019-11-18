@@ -10,6 +10,7 @@ import UIKit
 
 class ProductCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var blackLineView: UIView!
     @IBOutlet weak var productTitleLabel: UILabel!
     var data : ProductData?{
         didSet{
@@ -18,6 +19,14 @@ class ProductCollectionViewCell: UICollectionViewCell {
             }
         }
     }
+    
+    override var isSelected: Bool {
+      didSet {
+        productTitleLabel.textColor = isSelected ? UIColor.black : UIColor.gray
+        blackLineView.isHidden = !isSelected
+      }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
