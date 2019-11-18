@@ -31,13 +31,13 @@ class SelectionButton: UIButton {
     
     init(title: String?) {
         super.init(frame: .zero)
-        self.setTitleColor(.red, for: .normal)
-        self.setTitle(title, for: .normal)
-        self.titleLabel?.adjustsFontSizeToFitWidth = true
-        self.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-        self.layer.borderWidth = 1.0
-        self.layer.borderColor = UIColor.red.cgColor
-        self.layer.cornerRadius = 4.0
+        setTitleColor(.red, for: .normal)
+        setTitle(title, for: .normal)
+        titleLabel?.adjustsFontSizeToFitWidth = true
+        addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+        layer.borderWidth = 1.0
+        layer.borderColor = UIColor.red.cgColor
+        layer.cornerRadius = 4.0
     }
     
     required init?(coder: NSCoder) {
@@ -51,11 +51,11 @@ class SelectionButton: UIButton {
     override var isSelected: Bool {
         didSet {
             if isSelected {
-                self.backgroundColor = UIColor.red
-                self.setTitleColor(.white, for: .selected)
+                backgroundColor = UIColor.red
+                setTitleColor(.white, for: .selected)
             } else {
-                self.backgroundColor = UIColor.clear
-                self.setTitleColor(.red, for: .normal)
+                backgroundColor = UIColor.clear
+                setTitleColor(.red, for: .normal)
             }
         }
     }

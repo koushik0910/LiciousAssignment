@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4CF6EEFAED1E5EBB083A70A4 /* Pods_Licious.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E021DADCB1851539948376BA /* Pods_Licious.framework */; };
+		700E13552381B21000BADDAD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E13542381B21000BADDAD /* CustomButton.swift */; };
+		7033774B2380F0670080E777 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703377492380F0670080E777 /* ProductCollectionViewCell.swift */; };
+		7033774C2380F0670080E777 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7033774A2380F0670080E777 /* ProductCollectionViewCell.xib */; };
 		70A0B232237DA55F0009EE86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A0B231237DA55F0009EE86 /* AppDelegate.swift */; };
 		70A0B234237DA55F0009EE86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A0B233237DA55F0009EE86 /* SceneDelegate.swift */; };
 		70A0B239237DA55F0009EE86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70A0B237237DA55F0009EE86 /* Main.storyboard */; };
@@ -28,6 +31,9 @@
 
 /* Begin PBXFileReference section */
 		4FD74CF2EAAEA918DA10D57D /* Pods-Licious.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Licious.debug.xcconfig"; path = "Target Support Files/Pods-Licious/Pods-Licious.debug.xcconfig"; sourceTree = "<group>"; };
+		700E13542381B21000BADDAD /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		703377492380F0670080E777 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		7033774A2380F0670080E777 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		70A0B22E237DA55F0009EE86 /* Licious.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Licious.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A0B231237DA55F0009EE86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70A0B233237DA55F0009EE86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		703377482380F0090080E777 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				703377492380F0670080E777 /* ProductCollectionViewCell.swift */,
+				7033774A2380F0670080E777 /* ProductCollectionViewCell.xib */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
 		70A0B225237DA55F0009EE86 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +98,7 @@
 		70A0B230237DA55F0009EE86 /* Licious */ = {
 			isa = PBXGroup;
 			children = (
+				703377482380F0090080E777 /* CollectionViewCells */,
 				70A0B251237DB6DE0009EE86 /* TableViewCells */,
 				70A0B247237DA9600009EE86 /* FeedbackPayload.json */,
 				70A0B231237DA55F0009EE86 /* AppDelegate.swift */,
@@ -97,6 +113,7 @@
 				70A0B24F237DAFCF0009EE86 /* ReviewRatingDataService.swift */,
 				70BE101D237DD3960098AAB1 /* RatingProtocol.swift */,
 				70BE101F237DE09D0098AAB1 /* SelectionButton.swift */,
+				700E13542381B21000BADDAD /* CustomButton.swift */,
 			);
 			path = Licious;
 			sourceTree = "<group>";
@@ -192,6 +209,7 @@
 				70BE101C237DCC470098AAB1 /* FeedbackTableViewCell.xib in Resources */,
 				70A0B23E237DA5610009EE86 /* LaunchScreen.storyboard in Resources */,
 				70A0B255237DB71C0009EE86 /* ItemDetailsTableViewCell.xib in Resources */,
+				7033774C2380F0670080E777 /* ProductCollectionViewCell.xib in Resources */,
 				70A0B23B237DA5610009EE86 /* Assets.xcassets in Resources */,
 				70A0B239237DA55F0009EE86 /* Main.storyboard in Resources */,
 				70A0B248237DA9610009EE86 /* FeedbackPayload.json in Resources */,
@@ -249,11 +267,13 @@
 			files = (
 				70A0B24E237DAFBE0009EE86 /* ReviewRatingViewModel.swift in Sources */,
 				70A0B24A237DA9F70009EE86 /* ReviewRatingTableViewController.swift in Sources */,
+				7033774B2380F0670080E777 /* ProductCollectionViewCell.swift in Sources */,
 				70A0B232237DA55F0009EE86 /* AppDelegate.swift in Sources */,
 				70A0B234237DA55F0009EE86 /* SceneDelegate.swift in Sources */,
 				70BE101E237DD3960098AAB1 /* RatingProtocol.swift in Sources */,
 				70A0B250237DAFCF0009EE86 /* ReviewRatingDataService.swift in Sources */,
 				70BE1020237DE09D0098AAB1 /* SelectionButton.swift in Sources */,
+				700E13552381B21000BADDAD /* CustomButton.swift in Sources */,
 				70A0B254237DB71C0009EE86 /* ItemDetailsTableViewCell.swift in Sources */,
 				70BE101B237DCC470098AAB1 /* FeedbackTableViewCell.swift in Sources */,
 				70A0B24C237DACA10009EE86 /* Model.swift in Sources */,

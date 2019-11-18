@@ -34,6 +34,7 @@ class FeedbackTableViewCell: UITableViewCell {
         for item in subviews {
             item.removeFromSuperview()
         }
+        
         if let attributes = data?.question?.levelRateQuestion.first?.attributes {
             let views = SelectionButton.buttonLayout(forAtttributes: attributes)
             for item in views {
@@ -43,6 +44,15 @@ class FeedbackTableViewCell: UITableViewCell {
         } else {
             optionsStackView.isHidden = true
         }
+        
+        if let feedbackType = data?.feedbackType{
+            switch feedbackType {
+            case .question_with_text:
+                productsCollectionView.isHidden = true
+            case .dynamic:
+                productsCollectionView.isHidden = false
+            }
+        }
         }
     }
     weak var delegate : RatingProtocol?
@@ -50,7 +60,9 @@ class FeedbackTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        productsCollectionView.isHidden = true
+        self.productsCollectionView.register(UINib.init(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductCollectionViewCell")
+        productsCollectionView.dataSource = self
+        productsCollectionView.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -60,3 +72,23 @@ class FeedbackTableViewCell: UITableViewCell {
     }
     
 }
+
+extension FeedbackTableViewCell : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //return data?.product_data?.count ?? 0
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = productsCollectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as! ProductCollectionViewCell
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 40)
+        }
+    
+}
+

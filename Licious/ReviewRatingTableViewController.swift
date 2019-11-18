@@ -11,7 +11,7 @@ import UIKit
 class ReviewRatingTableViewController: UITableViewController {
     
     
-    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var submitButton: CustomButton!
     enum Section: Int {
         case OrderDetails = 0
         case Feedback
@@ -41,8 +41,6 @@ class ReviewRatingTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        submitButton.layer.borderWidth = 1
-        submitButton.layer.borderColor = UIColor.red.cgColor
         
         self.viewModel.fetchData {
             self.tableView.reloadData()
@@ -103,6 +101,7 @@ class ReviewRatingTableViewController: UITableViewController {
 
 extension ReviewRatingTableViewController : RatingProtocol{
     func updateCell() {
+        submitButton.isEnabled = true
         tableView.reloadData()
     }
     
