@@ -10,6 +10,7 @@ import UIKit
 import Cosmos
 class FeedbackTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var stackViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var uploadBadImageView: UIView!
     @IBOutlet weak var separatorView: UIView!
     @IBOutlet weak var productsCollectionView: UICollectionView!{
@@ -32,6 +33,14 @@ class FeedbackTableViewCell: UITableViewCell {
                     self.data?.updatedRating = Int(rating)
                 case .dynamic:
                     self.data?.product_data?[self.data?.selectedIndex ?? 0].updatedRating = Int(rating)
+                    if (self.data?.product_data?[self.data?.selectedIndex ?? 0].updatedRating) ?? 0  > 2{
+                        self.uploadBadImageView.isHidden = true
+                        self.stackViewBottomConstraint.constant = 16
+                    }else{
+                        self.uploadBadImageView.isHidden = false
+                        self.stackViewBottomConstraint.constant = 0
+                    }
+
                 case .none:
                     break                    
                 }
@@ -64,7 +73,7 @@ class FeedbackTableViewCell: UITableViewCell {
                     }
                     productsCollectionView.isHidden = true
                     cosmosView.rating = Double(data?.updatedRating ?? 0)
-                    uploadBadImageView.isHidden = true
+                    
                 case .dynamic:
                     subTitleLabel.isHidden = data?.product_data?[self.data?.selectedIndex ?? 0].question?.levelRateQuestion.first?.subClassQuestion == nil
                     subTitleLabel.text = data?.product_data?[self.data?.selectedIndex ?? 0].question?.levelRateQuestion.first?.subClassQuestion
