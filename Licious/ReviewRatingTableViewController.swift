@@ -12,24 +12,21 @@ class ReviewRatingTableViewController: UITableViewController {
     
     
     @IBOutlet weak var submitButton: CustomButton!
-    enum Section: Int {
-        case OrderDetails = 0
-        case Feedback
-        case AnythingElse
-        
-        func reuseIdentifier() -> String {
-            switch self {
-                case .OrderDetails: return "ItemDetailsTableViewCell"
-                case .Feedback: return "FeedbackTableViewCell"
-                case .AnythingElse: return "ItemDetailsTableViewCell"
-            }
-        }
-    }
-
     @IBOutlet var viewModel: ReviewRatingViewModel!
-    
     @IBOutlet var submitButtonView: UIView!
     
+    enum Section: Int {
+           case OrderDetails = 0
+           case Feedback
+           case AnythingElse
+           func reuseIdentifier() -> String {
+               switch self {
+                   case .OrderDetails: return "ItemDetailsTableViewCell"
+                   case .Feedback: return "FeedbackTableViewCell"
+                   case .AnythingElse: return "AnythingElseTableViewCell"
+               }
+           }
+       }
     
     override var inputAccessoryView: UIView? {
         return submitButtonView
@@ -46,7 +43,6 @@ class ReviewRatingTableViewController: UITableViewController {
             self.tableView.reloadData()
             self.becomeFirstResponder()
         }
-        
         registerCells()
     }
     
@@ -54,10 +50,11 @@ class ReviewRatingTableViewController: UITableViewController {
     private func registerCells() {
         self.tableView.register(UINib.init(nibName: "ItemDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "ItemDetailsTableViewCell")
         self.tableView.register(UINib.init(nibName: "FeedbackTableViewCell", bundle: nil), forCellReuseIdentifier: "FeedbackTableViewCell")
+        self.tableView.register(UINib.init(nibName: "AnythingElseTableViewCell", bundle: nil), forCellReuseIdentifier: "AnythingElseTableViewCell")
         
     }
 
-    // MARK: - Table view data source
+    // MARK: - Table view
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -83,14 +80,15 @@ class ReviewRatingTableViewController: UITableViewController {
             guard let cell = cell as? FeedbackTableViewCell else {return UITableViewCell()}
             cell.data = self.viewModel.response?.data.feedbackItems[indexPath.row]
             cell.delegate = self
-        default: return UITableViewCell()
+        case .AnythingElse:
+            guard cell is AnythingElseTableViewCell else {return UITableViewCell()}
         }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        guard Section(rawValue: section) != nil else {return CGFloat.leastNormalMagnitude}
-        return 10
+        guard let section = Section(rawValue: section) else {return CGFloat.leastNormalMagnitude}
+        return  section.rawValue == 0 ? CGFloat.leastNormalMagnitude : 10
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -98,7 +96,7 @@ class ReviewRatingTableViewController: UITableViewController {
     }
 }
 
-
+ // MARK: - Rating Protocol
 extension ReviewRatingTableViewController : RatingProtocol{
     func updateCell() {
         submitButton.isEnabled = true

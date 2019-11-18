@@ -21,7 +21,7 @@ class ItemDetailsTableViewCell: UITableViewCell {
         didSet {
             if let data = data {
                 self.itemNameLabel.text = data.items_message
-                self.deliveredDateLabel.text = "Delivered:" + data.delivered_date
+                self.deliveredDateLabel.text = data.formattedDeliveredDate
                 self.itemImageView.sd_setImage(with: data.itemImageUrl)
             } else {
                 // handle empty

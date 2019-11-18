@@ -29,7 +29,7 @@ class ReviewRatingViewModel: NSObject {
         switch section {
         case .OrderDetails : return response == nil ? 0 : 1
         case .Feedback: return response == nil ? 0 : response?.data.feedbackItems.count ?? 0
-        case .AnythingElse: return response == nil ? 0 : 0
+        case .AnythingElse: return response == nil ? 0 : 1
         }
     }
     

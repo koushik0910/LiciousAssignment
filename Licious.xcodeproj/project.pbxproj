@@ -18,7 +18,7 @@
 		70A0B23E237DA5610009EE86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70A0B23C237DA5610009EE86 /* LaunchScreen.storyboard */; };
 		70A0B248237DA9610009EE86 /* FeedbackPayload.json in Resources */ = {isa = PBXBuildFile; fileRef = 70A0B247237DA9600009EE86 /* FeedbackPayload.json */; };
 		70A0B24A237DA9F70009EE86 /* ReviewRatingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A0B249237DA9F70009EE86 /* ReviewRatingTableViewController.swift */; };
-		70A0B24C237DACA10009EE86 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A0B24B237DACA10009EE86 /* Model.swift */; };
+		70A0B24C237DACA10009EE86 /* ReviewRatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A0B24B237DACA10009EE86 /* ReviewRatingModel.swift */; };
 		70A0B24E237DAFBE0009EE86 /* ReviewRatingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A0B24D237DAFBE0009EE86 /* ReviewRatingViewModel.swift */; };
 		70A0B250237DAFCF0009EE86 /* ReviewRatingDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A0B24F237DAFCF0009EE86 /* ReviewRatingDataService.swift */; };
 		70A0B254237DB71C0009EE86 /* ItemDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A0B252237DB71B0009EE86 /* ItemDetailsTableViewCell.swift */; };
@@ -45,7 +45,7 @@
 		70A0B23F237DA5610009EE86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70A0B247237DA9600009EE86 /* FeedbackPayload.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FeedbackPayload.json; sourceTree = "<group>"; };
 		70A0B249237DA9F70009EE86 /* ReviewRatingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRatingTableViewController.swift; sourceTree = "<group>"; };
-		70A0B24B237DACA10009EE86 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		70A0B24B237DACA10009EE86 /* ReviewRatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRatingModel.swift; sourceTree = "<group>"; };
 		70A0B24D237DAFBE0009EE86 /* ReviewRatingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRatingViewModel.swift; sourceTree = "<group>"; };
 		70A0B24F237DAFCF0009EE86 /* ReviewRatingDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRatingDataService.swift; sourceTree = "<group>"; };
 		70A0B252237DB71B0009EE86 /* ItemDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsTableViewCell.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 				70A0B23C237DA5610009EE86 /* LaunchScreen.storyboard */,
 				70A0B23F237DA5610009EE86 /* Info.plist */,
 				70A0B249237DA9F70009EE86 /* ReviewRatingTableViewController.swift */,
-				70A0B24B237DACA10009EE86 /* Model.swift */,
+				70A0B24B237DACA10009EE86 /* ReviewRatingModel.swift */,
 				70A0B24D237DAFBE0009EE86 /* ReviewRatingViewModel.swift */,
 				70A0B24F237DAFCF0009EE86 /* ReviewRatingDataService.swift */,
 				70BE101D237DD3960098AAB1 /* RatingProtocol.swift */,
@@ -284,7 +284,7 @@
 				700E13552381B21000BADDAD /* CustomButton.swift in Sources */,
 				70A0B254237DB71C0009EE86 /* ItemDetailsTableViewCell.swift in Sources */,
 				70BE101B237DCC470098AAB1 /* FeedbackTableViewCell.swift in Sources */,
-				70A0B24C237DACA10009EE86 /* Model.swift in Sources */,
+				70A0B24C237DACA10009EE86 /* ReviewRatingModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,8 @@ import UIKit
 import Cosmos
 class FeedbackTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var uploadBadImageView: UIView!
+    @IBOutlet weak var separatorView: UIView!
     @IBOutlet weak var productsCollectionView: UICollectionView!{
         didSet{
             productsCollectionView.register(UINib.init(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductCollectionViewCell")
@@ -62,7 +64,7 @@ class FeedbackTableViewCell: UITableViewCell {
                     }
                     productsCollectionView.isHidden = true
                     cosmosView.rating = Double(data?.updatedRating ?? 0)
-                    
+                    uploadBadImageView.isHidden = true
                 case .dynamic:
                     subTitleLabel.isHidden = data?.product_data?[self.data?.selectedIndex ?? 0].question?.levelRateQuestion.first?.subClassQuestion == nil
                     subTitleLabel.text = data?.product_data?[self.data?.selectedIndex ?? 0].question?.levelRateQuestion.first?.subClassQuestion
