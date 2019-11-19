@@ -30,7 +30,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="KGk-i7-Jjw" id="aL5-V4-lGh"/>
+                                    <outlet property="delegate" destination="KGk-i7-Jjw" id="viG-sn-f9C"/>
                                 </connections>
                             </textField>
                         </subviews>

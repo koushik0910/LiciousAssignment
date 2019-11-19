@@ -33,15 +33,6 @@ class FeedbackTableViewCell: UITableViewCell {
                     self.data?.updatedRating = Int(rating)
                 case .dynamic:
                     self.data?.product_data?[self.data?.selectedIndex ?? 0].updatedRating = Int(rating)
-                    
-                    if (self.data?.product_data?[self.data?.selectedIndex ?? 0].updatedRating) ?? 0  > 2{
-                        self.uploadBadImageView.isHidden = true
-                        self.stackViewBottomConstraint.constant = 16
-                    }else{
-                        self.uploadBadImageView.isHidden = false
-                        self.stackViewBottomConstraint.constant = 0
-                    }
-
                 case .none:
                     break                    
                 }
@@ -91,6 +82,14 @@ class FeedbackTableViewCell: UITableViewCell {
                     productsCollectionView.isHidden = false
                     productsCollectionView.selectItem(at: IndexPath(row: data?.selectedIndex ?? 0, section: 0), animated: false, scrollPosition: [])
                     cosmosView.rating = Double(data?.product_data?[self.data?.selectedIndex ?? 0].updatedRating ?? 0)
+                    
+                    if (self.data?.product_data?[self.data?.selectedIndex ?? 0].updatedRating) ?? 0  > 2 || (self.data?.product_data?[self.data?.selectedIndex ?? 0].updatedRating) ?? 0 < 1{
+                        self.uploadBadImageView.isHidden = true
+                        self.stackViewBottomConstraint.constant = 16
+                    }else{
+                        self.uploadBadImageView.isHidden = false
+                        self.stackViewBottomConstraint.constant = 0
+                    }
                 }
             }
         }
@@ -126,7 +125,6 @@ extension FeedbackTableViewCell : UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         data?.selectedIndex = indexPath.row
-        cosmosView.rating = 0
         optionsStackView.isHidden = true
         subTitleLabel.isHidden = true
         self.delegate?.updateCell()
