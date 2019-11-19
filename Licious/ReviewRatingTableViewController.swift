@@ -11,10 +11,11 @@ import UIKit
 class ReviewRatingTableViewController: UITableViewController {
     
     
+    @IBOutlet var bottomFixedView: BottomBar!
     @IBOutlet weak var submitButton: CustomButton!
     @IBOutlet var viewModel: ReviewRatingViewModel!
     @IBOutlet var submitButtonView: UIView!
-    
+    @IBOutlet weak var receiveCallButton: UIButton!
     enum Section: Int {
            case OrderDetails = 0
            case Feedback
@@ -29,7 +30,7 @@ class ReviewRatingTableViewController: UITableViewController {
        }
     
     override var inputAccessoryView: UIView? {
-        return submitButtonView
+        return bottomFixedView
     }
     
     override var canBecomeFirstResponder: Bool {
@@ -43,6 +44,7 @@ class ReviewRatingTableViewController: UITableViewController {
             self.tableView.reloadData()
             self.becomeFirstResponder()
         }
+        receiveCallButton.centerTextAndImage(spacing: 8)
         registerCells()
     }
     
@@ -100,6 +102,7 @@ class ReviewRatingTableViewController: UITableViewController {
 extension ReviewRatingTableViewController : RatingProtocol{
     func updateCell() {
         submitButton.isEnabled = true
+        receiveCallButton.isHidden = false
         tableView.reloadData()
     }    
 }

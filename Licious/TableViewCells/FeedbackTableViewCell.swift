@@ -33,6 +33,7 @@ class FeedbackTableViewCell: UITableViewCell {
                     self.data?.updatedRating = Int(rating)
                 case .dynamic:
                     self.data?.product_data?[self.data?.selectedIndex ?? 0].updatedRating = Int(rating)
+                    
                     if (self.data?.product_data?[self.data?.selectedIndex ?? 0].updatedRating) ?? 0  > 2{
                         self.uploadBadImageView.isHidden = true
                         self.stackViewBottomConstraint.constant = 16

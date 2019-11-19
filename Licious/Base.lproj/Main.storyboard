@@ -11,7 +11,7 @@
         <scene sceneID="0HH-6K-QcO">
             <objects>
                 <tableViewController id="YYg-nw-ovG" customClass="ReviewRatingTableViewController" customModule="Licious" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="YIw-Oq-sS2">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="YIw-Oq-sS2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -32,35 +32,50 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Reviews &amp; Ratings" id="LYh-ep-Ugf"/>
                     <connections>
-                        <outlet property="submitButton" destination="mlL-aZ-HKG" id="8Pi-8J-0Ko"/>
-                        <outlet property="submitButtonView" destination="HdO-o2-tDC" id="NYu-O9-eNs"/>
+                        <outlet property="bottomFixedView" destination="Tqe-Ff-Ak9" id="Bov-0T-GeE"/>
+                        <outlet property="receiveCallButton" destination="AMF-13-5fo" id="8Tn-6y-bQk"/>
+                        <outlet property="submitButton" destination="0mf-3k-dXr" id="QR7-gc-ZrV"/>
                         <outlet property="viewModel" destination="0vC-2f-Z0N" id="eWA-J3-2VF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tsn-LE-DEZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="HdO-o2-tDC" customClass="BottomBar" customModule="Licious" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="371" height="98"/>
+                <view contentMode="scaleToFill" id="Tqe-Ff-Ak9" customClass="BottomBar" customModule="Licious" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="373" height="94"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlL-aZ-HKG" customClass="CustomButton" customModule="Licious" customModuleProvider="target">
-                            <rect key="frame" x="8" y="8" width="347" height="82"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ubs-Ir-9Nc">
+                            <rect key="frame" x="8" y="8" width="357" height="30"/>
+                            <subviews>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMF-13-5fo">
+                                    <rect key="frame" x="65.5" y="0.0" width="226" height="0.0"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <state key="normal" title="Receive a call from customer care " image="checkboxEmpty">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mf-3k-dXr" customClass="CustomButton" customModule="Licious" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="357" height="30"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="ebx-Ey-46F"/>
+                                    </constraints>
+                                    <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="Submit"/>
+                                </button>
+                            </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="vHs-XO-aSd"/>
+                                <constraint firstItem="0mf-3k-dXr" firstAttribute="width" secondItem="ubs-Ir-9Nc" secondAttribute="width" id="FDT-Im-ARg"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <state key="normal" title="Submit"/>
-                        </button>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstItem="keY-lD-LUy" firstAttribute="bottom" secondItem="mlL-aZ-HKG" secondAttribute="bottom" constant="8" id="QlY-Ec-qy8"/>
-                        <constraint firstItem="keY-lD-LUy" firstAttribute="trailing" secondItem="mlL-aZ-HKG" secondAttribute="trailing" constant="16" id="asL-bA-5ve"/>
-                        <constraint firstItem="mlL-aZ-HKG" firstAttribute="leading" secondItem="keY-lD-LUy" secondAttribute="leading" constant="8" id="ce2-To-GvY"/>
-                        <constraint firstItem="mlL-aZ-HKG" firstAttribute="top" secondItem="keY-lD-LUy" secondAttribute="top" constant="8" id="xoC-ff-kB3"/>
+                        <constraint firstItem="ubs-Ir-9Nc" firstAttribute="top" secondItem="3YN-cp-5A8" secondAttribute="top" constant="8" id="3vy-5Q-zQr"/>
+                        <constraint firstItem="ubs-Ir-9Nc" firstAttribute="leading" secondItem="3YN-cp-5A8" secondAttribute="leading" constant="8" id="CLM-jy-m2Z"/>
+                        <constraint firstItem="3YN-cp-5A8" firstAttribute="bottom" secondItem="ubs-Ir-9Nc" secondAttribute="bottom" constant="8" id="PWB-N9-03d"/>
+                        <constraint firstItem="3YN-cp-5A8" firstAttribute="trailing" secondItem="ubs-Ir-9Nc" secondAttribute="trailing" constant="8" id="dYl-Fi-wwn"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="keY-lD-LUy"/>
+                    <viewLayoutGuide key="safeArea" id="3YN-cp-5A8"/>
                 </view>
                 <customObject id="0vC-2f-Z0N" customClass="ReviewRatingViewModel" customModule="Licious" customModuleProvider="target">
                     <connections>
@@ -91,4 +106,7 @@
             <point key="canvasLocation" x="2376.8000000000002" y="-350.37481259370315"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="checkboxEmpty" width="17" height="17"/>
+    </resources>
 </document>

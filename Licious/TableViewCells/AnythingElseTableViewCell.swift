@@ -22,3 +22,9 @@ class AnythingElseTableViewCell: UITableViewCell {
     }
     
 }
+
+extension AnythingElseTableViewCell: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+}
